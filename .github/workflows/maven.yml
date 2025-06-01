@@ -13,6 +13,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+    
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -25,7 +28,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '21'
-        distribution: 'temurin'
+        distribution: 'tumelonito'
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
